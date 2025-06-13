@@ -16,7 +16,7 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.makedirs(app.config['MODEL_FOLDER'], exist_ok=True)
 
 # Gemini AI Setup 
-GEMINI_API_KEY = "AIzaSyAuctFZu4tnAVwMmH2_EupQFd47o6JddBA"
+GEMINI_API_KEY = "YourAPI key"
 genai.configure(api_key=GEMINI_API_KEY)
 
 # YOLO Setup 
