@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftIQ - AI-Powered Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+    <!-- Load model-viewer from stable CDN -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <!-- (Hidden model-viewer to register the custom element early) -->
+    <model-viewer style="display:none"></model-viewer>
+
+    <div class="container">
+        <h1>CraftIQ - AI-Powered Platform</h1>
+        <p>Learn how things are made with AI-powered insights!</p>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <h2>Image Manufacturing Info</h2>
+
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="file">
+                <button type="button" id="analyzeImageBtn">Analyze Image</button>
+
+                <br><br>
+
+                <input type="text" id="objectInput" name="manual_input" placeholder="Enter object name">
+                <button type="button" id="analyzeTextBtn">Analyze Text</button>
+            </form>
+
+            <div id="imageResult"></div>
+        </div>
+
+        <!-- 3D Models Section -->
+        <div class="models-section">
+            <h2>3D Models</h2>
+            <div id="modelViewerContainer">
+                <!-- Dynamically loaded models will appear here -->
+            </div>
+        </div>
+
+        <!-- Chatbot Section -->
+        <div class="chat-container">
+            <h2>Chat with AI</h2>
+            <div class="chat-box" id="chatBox"></div>
+            <input type="text" id="chatInput" placeholder="Ask something...">
+            <button type="button" id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
